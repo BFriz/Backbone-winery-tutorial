@@ -4,7 +4,9 @@
 var AppRouter = Backbone.Router.extend({
 
   routes:{
+    // The default route that displays the list of wine.
     "":"list",
+    // Displays the details of a specific wine in the wine form. 
     "wines/:id":"wineDetails"
   },
 

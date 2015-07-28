@@ -15,9 +15,23 @@ window.WineListView = Backbone.View.extend({
     return this;
   }
 });
+
+window.WineListItemView = Backbone.View.extend({
+
+  tagName:"li",
+
+  template:_.template($('£tpl-wine-list-item').html()),
+
+  render:function (eventName) {
+    // The render()function merges the model data into "wine-list-item" template (defined in index.html) By defining a separate View for list items you will make it easy to update(re-render) a specific list item when the backing model changes without re-rendering the entire list.
+
+    $(this.el).html(this.template(this.model.toJSON()));
+  }
+});
+// The view resonsible for displaying the wine details in the Wine form.
 window.WineView = Backbone.View.extend({
   template:_.template($('#tpl-wine-details').html()),
-
+// The render() function merges the model data (a specfic wine) into the "wine-details" template retrieved from index.html
   render: function (eventName) {
     $(this.el).html(this.template(this.model.toJSON()));
     return this;
