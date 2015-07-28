@@ -1,0 +1,5 @@
+Backbone is a lightweight framework that adds structure to javaScript-heavy Web applications through Self-contained building blocks.
+
+  First create Models, Collections, and Views of your app then bring them to life by defining a Router
+
+  You bind Views to Models so that when a Model's data changes, all the Views bound to that model automaticallre-render.
